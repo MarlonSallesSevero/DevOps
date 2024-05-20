@@ -1,0 +1,34 @@
+https://developer.hashicorp.com/vagrant/docs/networking
+
+Configurando a rede no Vagrant. 
+
+O Vagrant quando cria uma maquina virtual, por default o vagrant cria uma placa de rede no tipo NAT.
+Podemos adicionar uma nova placa de rede. 
+Dentro da documentacao podemos ver basicamente dois tipos relacionados. Private networking e Public networking.
+
+Exemplos Private network:
+
+        DHCP 
+
+        Vagrant.configure("2") do |config|
+        config.vm.network "private_network", type: "dhcp"
+        end
+
+        IP ESTATICA :
+
+        Vagrant.configure("2") do |config|
+        config.vm.network "private_network", ip: "192.168.50.4"
+        end
+
+
+Podemos mudar as especificações do provider na linha 52 tirado o comentario. 
+
+        config.vm.provider "virtualbox" do |vb|
+
+Podemos configurar o redirecionamento de portas
+
+        config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+
+Mapeamento de Pastas
+
+        config.vm.synced_folder "../data", "/vagrant_data"

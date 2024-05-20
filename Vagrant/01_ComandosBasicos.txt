@@ -8,7 +8,14 @@ Resumo Comandos :
     vagrant up 																(inicializa as boxes)
     vagrant status 															(mostra o status das vms)
 	vagrant halt 															(desliga a box)
+	vagrant reload default													(reinicia a maquina)
+	vagrant validate 														(faz a validacao do arquivo VagrantFile)
+	vagrant destroy default 												(é apagado a maquina virtual)
+	vagrant up --provision 													(faz o provisionamento da maquina com as config defenidas)
+	vagrant provision 														(executa somente a parte do provision)
 ----------------------------------------------------------------------------------------------------
+
+
 Vagrant : Vagrant é uma solução de gerenciamento e construção de máquina virtuais, 
 com a finalidade de automatizar a construção de laboratórios complexo por um único 
 arquivo de configuração
@@ -37,3 +44,4 @@ VagrantFile tem o Alias 'config' que aplica as config com base no vagrant.config
 
     
 Comando, Vagrant up : Vai ser o arquivo VagrantFile e vai validar se precisar criar / mudar alguma VM 
+
