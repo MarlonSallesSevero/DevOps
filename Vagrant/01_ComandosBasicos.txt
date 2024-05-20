@@ -1,0 +1,39 @@
+Resumo Comandos : 
+
+    vagrant --version   													(mostra a versao do vagrant instalada)
+    vagrant box list    													(lista as boxes instaladas)
+    vagrant box add nomebox/box 											(adiciona boxes)
+    vagrant box remove nome_box/box --box-version 0.3 						(remove boxes)
+	vagrant init 															(se nao tivermos o arquivo vagrantFile sera criado.)
+    vagrant up 																(inicializa as boxes)
+    vagrant status 															(mostra o status das vms)
+	vagrant halt 															(desliga a box)
+----------------------------------------------------------------------------------------------------
+Vagrant : Vagrant é uma solução de gerenciamento e construção de máquina virtuais, 
+com a finalidade de automatizar a construção de laboratórios complexo por um único 
+arquivo de configuração
+
+Podemos criar boxes com as nossas configurações ou baixar uma no link : https://app.vagrantup.com/
+
+PS. Box seria como se fosse uma imagem da VM
+
+Para termos certeza que o Vagrant esta instalado na nossa maquina, podemos rodar o comendo : 
+    >> vagrant --version 
+
+Listando Boxes instaladas :
+    >> vagrant box list 
+
+Removendo uma box :
+    >> vagrant box remove nome_box/box
+    >> vagrant box remove nome_box/box --box-version 0.3 
+
+Adicionando uma box : 
+    >> vagrant box add nomebox/box
+
+Após baixar a box que queremos, podemos inicializar a mesma com o comando :
+    >> vagrant box_nome/box
+Após isso,o vagrant vai criar o arquivo VagrantFile.
+VagrantFile tem o Alias 'config' que aplica as config com base no vagrant.configure 
+
+    
+Comando, Vagrant up : Vai ser o arquivo VagrantFile e vai validar se precisar criar / mudar alguma VM 
