@@ -1,0 +1,14 @@
+Vamos criar multi VMS, ou seja,mais de uma maquina virtual e estas vao se comunicar. 
+
+Por default a maquina é criada com uma placa de rede no tipo NAT.
+
+vm1 : 
+    hostname : controle 
+    ip : 172.17.177.100
+vm2 : 
+    hostname : web 
+    ip : 172.17.177.101
+vm3 : 
+    hostname : db 
+    ip : 172.17.177.102
+

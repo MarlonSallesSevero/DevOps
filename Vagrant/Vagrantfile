@@ -1,0 +1,12 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "controle" do |controle|
+      controle.vm.box = "shekeriev/debian-11"
+      controle.vm.hostname = "controle"
+      controle.vm.network "private_network", ip: "172.17.177.100"
+      controle.vm.provider "virtualbox" do |vb|
+          vb.name = "controle"
+          vb.memory = "2048"
+          vb.cpus = 2 
+        end
+  end
+end
