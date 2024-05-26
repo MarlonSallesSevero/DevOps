@@ -1,7 +1,9 @@
 Vagrant.configure("2") do |config|
+  config.vm.provision "shell", path: "script.sh"
   config.vm.define "controle" do |controle|
       controle.vm.box = "shekeriev/debian-11"
       controle.vm.hostname = "controle"
+      controle.disksize.size = '50GB'
       controle.vm.network "private_network", ip: "172.17.177.100"
       controle.vm.provider "virtualbox" do |vb|
           vb.name = "controle"
