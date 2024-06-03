@@ -1,0 +1,15 @@
+---
+- hosts: db
+  become: yes 
+  tasks:
+  - name: 'Instalacao de Pacotes DB' 
+    apt: 
+      pkg:
+          - mariadb-server
+          - wget 
+          - zip 
+          - curl 
+          - vim 
+          - python3-mysqldb
+      state: present 
+

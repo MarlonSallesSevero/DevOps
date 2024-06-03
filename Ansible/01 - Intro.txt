@@ -1,0 +1,15 @@
+Ad-hoc : Executa aões rapidas nas maquinas. 
+
+ansible --help : podemos ver como fazer o gerenciamento.
+
+ssh-keygen : Geramom uma chave key para conexao ssh 
+ssh-copy-id vagrant@17.. : enviamos para as maquinas destino 
+ansible-doc -l : Podemos ver todos os modulos do ansble. 
+
+exemplo:
+
+ ansible db -vv -i hosts -u vagrant --private-key /home/vagrant/.ssh/id_rsa -m shell -a 'touch /tmp/novo.txt'
+ ansible db -v -i hosts -m shell -a 'touch /tmp/novo.txt'  
+ 
+
+ 
