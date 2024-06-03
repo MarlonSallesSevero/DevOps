@@ -11,5 +11,33 @@ exemplo:
  ansible db -vv -i hosts -u vagrant --private-key /home/vagrant/.ssh/id_rsa -m shell -a 'touch /tmp/novo.txt'
  ansible db -v -i hosts -m shell -a 'touch /tmp/novo.txt'  
  
+ansible-doc apt : Podemos ter um exemplo de como usar a documentancao do Ansible.
 
- 
+Podemos criar um playbook para tasks 
+
+passo 1 - vim installdb.yml
+passo 2 - Inserir os pacotes que quemos instalar
+
+---
+- hosts: db     {grupo de maquinas que queimos aplicar}
+  become: yes   {elevação de privilegios}
+  tasks:   {modulo que ira utilizar}
+    - name: 'Instalacao de Pacotes DB' {nome da task}
+      apt:  
+        pkg:
+          - mariadb-server
+          - wget
+          - zip
+          - curl
+          - vim
+          - python3-mysqldb
+      state: present    {queremos os pacotes instalados *Pode ter outros states}
+
+passo 3 - Executar o playbook 
+    ansible-playbook -i hosts installdb.yml
+
+
+
+
+
+[]
