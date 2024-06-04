@@ -12,4 +12,8 @@
           - vim 
           - python3-mysqldb
       state: present 
-
+  - name: 'Download e extracao DB' 
+    unarchive: 
+      src: https://github.com/rogerramossilva/devops/raw/master/db.zip
+      dest: /tmp/
+      remote_src: yes  
