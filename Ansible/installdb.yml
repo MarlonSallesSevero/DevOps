@@ -16,4 +16,41 @@
     unarchive: 
       src: https://github.com/rogerramossilva/devops/raw/master/db.zip
       dest: /tmp/
-      remote_src: yes  
+      remote_src: yes 
+  - name: 'Criacao DB backup' 
+    mysql_db:
+      name: backup
+      login_user: root
+      login_password: ""
+      state: present 
+  - name: 'Importacao Base de Dados backup.sql'
+    mysql_db:
+      login_user: root 
+      login_password: ""
+      state: import 
+      name : backup 
+      target: /tmp/backup.sql
+  - name: 'Criacao de Usuario Express no Mysql' 
+    mysql_user: 
+      host: '%'
+      login_user: root
+      login_password: ""
+      name: express 
+      password: 'AllSafe0!'
+      priv: 'backup.*:ALL'
+      state: present
+        #notify: Restart Mysql
+  - name : 'Substituir bind do mysql' 
+    replace: 
+      path: /etc/mysql/mariadb.conf.d/50-server.cnf
+      regexp: '172\.0\.0\.1'
+      replace: '0.0.0.0'
+    notify: Restart MySQL
+
+  handlers: 
+    - name: Restart MySQL
+      service: 
+        name: mysql
+        state: restarted
+        enabled: yes  
+
