@@ -1,0 +1,43 @@
+
+ansible-doc unarchive
+
+*Podemos realizar o download de um arquivo e a extração em um diretorio destino. 
+Vamos realizar o download de um arquivo.
+
+Exemplo : 
+
+  - name: 'Download e extracao DB'
+    unarchive:                          {nome do modulo}
+      src: https://rep.com.br           {origem}
+      dest: /tmp/                       {destino}
+      remote_src: yes                   {flag}
+
+
+Vamos criar um banco de dados, chamado backup. Com user e senha. 
+
+    ansible-doc mysql_db : Criação / Importaçao da base de dados. 
+
+    ansible-doc mysql_user : Permissionamento. 
+
+Exemplos: 
+
+- name: Create new databases with names 'foo' and 'bar'
+  community.mysql.mysql_db:
+    name:
+      - foo
+      - bar
+    state: present
+
+Handlers: Não é uma TASK, fica fora do escopo. Utilizado para realizar tarefas utilizadas pelo NOTIFY. 
+
+ handlers:
+    - name: Restart MySQL
+      service:
+        name: mysql
+        state: restarted
+        enabled: yes
+
+
+
+
+
