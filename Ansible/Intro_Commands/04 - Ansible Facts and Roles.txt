@@ -1,0 +1,62 @@
+Facts: São utilizados quando queremos fazer verificações.
+Por exemplo, queremos garantir que o playbook vai rodar somente em maquinas web.
+Podemos criar um playbook para realizar um debug e obter algum dado para ter info e criar os facts. 
+*Como no arquivo fatcs.yml 
+
+Exemplo de um Facts.
+
+--- hosts: web
+    become: yes
+    vars_files:
+	-vars/default.yml 
+    gather_facts:true
+	tasks: ....
+    when: ansible_os_family == 'Debian' 
+
+**Ansible Galaxy.
+É como se fosse um GitHub.
+
+Utilizamos um conceito de roles. 
+
+Para adicionar alguma role executamos o seguinte comando: 
+ 	ansible-galaxy install stouts.nginx -p roles
+
+Para iniciar:
+	ansible-galaxy init stouts.nginx 
+
+Para listar as roles podemos executar o seguinte comando:
+	ansible-galaxy list -p roles
+
+Com isso, é criado uma estrutura completa para cada Role. 
+
+ 
+files     {conteúdo fixo}
+meta       {controle de dependencias}  
+templates  {conteúdo dinamico}
+vars	  
+defaults {Variáveis e Principais entradas dos playbooks}      
+handlers {Restart de Serviços}
+Makefile  
+tasks	{tarefas}        
+
+Estrutura que TODAS AS ROLES DEVEM FICAR :
+
+|___meta
+|   |____main.yml
+|
+|___tests
+|   |____inventory
+|   |
+|   |____test.yml
+|
+|___vars
+    |___main.yml
+
+Para listar as roles ativas:
+	ansible-galaxy list -p roles
+
+Para remover alguma role: 
+	ansible-galaxy remove stouts.nginx -p roles 
+
+***Precisamos revisar todas as roles utilizadas. 
+Não precisamos reinventar a roda. 

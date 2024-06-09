@@ -1,0 +1,12 @@
+O Puppet assim como o Ansible, trabalha com IAC (Infraestrutura como Código)
+Porem o Ansible tem uma aplicabilidade maior, mas o puppet, não deixa de ser uma ferramenta muito poderosa. 
+
+Modos de uso : 
+
+PuppetServer <> PuppetAgent  
+O puppet é bom para um boa Persistência do código. Podemos realizar agendamento para periódicas validações no servidor puppet. 
+
+Modo Autônomo:
+O puppet dai não trabalha com cliente <> server, criamos as classes (playbook) e aplicamos na maquina especifica. 
+
+
