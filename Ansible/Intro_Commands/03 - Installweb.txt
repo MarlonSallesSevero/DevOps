@@ -1,0 +1,50 @@
+No installweb.yml podemos ver algumas config e módulos diferentes.
+
+ vars_files: Variáveis, podemos definir variáveis de ambiente.
+Temos vários tipos de declarar, por arquivo, diretamente.
+
+**Precedencia de variáveis, é um sistema de substituição.
+
+Veja mais na documentação no Ansible. 
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html
+
+*** Chamada de uma variável de ambiente: {{ nome }} 
+
+Exemplos  :
+
+ex1. Em um arquivo, default.yml
+___________________________
+|                          |
+| http_host: "asf.com"	   |
+| http_port : "80"	   |
+| http_conf: "express.conf"|
+| app_user: "www-data"     |
+|__________________________|
+
+
+**Modulo File 
+
+Podemos fazer diversos itens com este modulo. 
+
+Dar permissão, copiar, mover arquivos.
+Qualquer coisa relacionado a arquivo podemos fazer com o modulo file. 
+
+**Modulo Template:
+
+Podemos utilizar um determinado arquivo de modelo. 
+Por exemplo para replicar para outras maquinas. 
+
+**Modulo Shell
+
+- name: 'Habilitar Arquivo de configuração express'
+  shell: /usr/sbin/a2enconf direxpress.conf
+    notify: Reload Apache
+
+**Modulo apache2_module 
+Fazemos a chamada de um modulo especifico para habilitar módulos. . 
+
+- name: 'Habilitar Modulo php7'
+  apache2_module:
+    state: present
+    name:  php7.4
+
