@@ -9,4 +9,9 @@ O puppet é bom para um boa Persistência do código. Podemos realizar agendamen
 Modo Autônomo:
 O puppet dai não trabalha com cliente <> server, criamos as classes (playbook) e aplicamos na maquina especifica. 
 
+----
+
+
+
+
 

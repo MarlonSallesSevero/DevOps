@@ -1,0 +1,42 @@
+O pupper trabalha com resources,para ver elas podemos ver com o comando : 
+
+puppet resource --types
+
+Exemplos:
+
+ex1. puppet resource file /etc/hosts
+
+ex2. puppet resource package vim
+
+ex3. puppet resource user 
+
+----
+O puppet trabalha com o conceito de Classes, é como se fosse as Tasks no Ansible.
+Porem nao basta simplismente criarmos a classe, precisamos dar um include nela para ela funcionar. 
+PS. Exemplo no arquivo site.pp 
+
+
+
+--------------------------------------------
+Entendendo o arquivo site.pp 
+--------------------------------------------
+
+**Exec {Utilizado para rodar alguns comandos}
+
+ex. 
+exec { "apt-update":
+  command => "/usr/bin/apt-get update"
+}
+
+**Package {podemos passar uma lista (Array) de pacotes para fazer a instalacao}
+
+exemplo. 
+package { 'openssl':
+  ensure => installed,
+  name   => $ssl,
+}
+
+**file {Template de arquivo }
+
+--------------------------------------------
+
