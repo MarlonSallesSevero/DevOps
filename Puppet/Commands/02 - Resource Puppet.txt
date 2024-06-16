@@ -62,6 +62,8 @@ root@puppet:~# /opt/puppetlabs/bin/puppetserver ca list --all {Para listar todos
 
 root@db:~# puppet agent --test {para testarmos a comunicação do agente}
 
+Vamos criar nossos manifets no caminho : /etc/puppetlabs/code/environments/production/manifests
+
 
 
 
