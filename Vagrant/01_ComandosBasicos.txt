@@ -6,6 +6,8 @@ Resumo Comandos :
     vagrant box remove nome_box/box --box-version 0.3 						(remove boxes)
 	vagrant init 															(se nao tivermos o arquivo vagrantFile sera criado.)
     vagrant up 																(inicializa as boxes)
+    vagrant up maquina --parallel
+    
     vagrant status 															(mostra o status das vms)
 	vagrant halt 															(desliga a box)
 	vagrant reload default													(reinicia a maquina)

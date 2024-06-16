@@ -40,3 +40,47 @@ package { 'openssl':
 
 --------------------------------------------
 
+{Podemos habilitar o desatibilitar serviço do puppet na inicialização. 
+ps.Podemos fazer por systemctl.
+
+
+root@puppet:~# puppet resource service puppet 
+
+root@puppet:~# puppet resource service puppet enable=false
+
+root@puppet:~# puppet resource servisse puppet enable=enable
+
+-----
+
+ 
+root@puppet:~# /opt/puppetlabs/bin/puppetserver ca list {Podemos listar as requisições pendentes dos puppetagents}
+
+root@puppet:~# /opt/puppetlabs/bin/puppetserver ca sign --certname db.asf.com {Para assinar os certificados}
+
+
+root@puppet:~# /opt/puppetlabs/bin/puppetserver ca list --all {Para listar todos assinados ou nao}
+
+root@db:~# puppet agent --test {para testarmos a comunicação do agente}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

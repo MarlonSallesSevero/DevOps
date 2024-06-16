@@ -1,0 +1,20 @@
+Vamos utilizar o Docker para gerenciamento dos containers.
+
+É de código aberto.
+
+O que é um container ? 
+>>> Podemos utilizar a conteinerização, para invés de usar várias maquinas virtuais, utilizar micro serviços. 
+
+Com o container, podemos eliminar duas camadas de administração. A camada do Sistema Operacional e se quisermos a do Hypervisor.
+
+Com containers, vamos isolar e usar somente o que é necessário para a aplicação.
+
+Vamos utilizar o Docker para o gerenciamento do Container. Para essa orquestração, podemos usar o kubernetes para escalar. 
+
+Não é tudo que podemos colocar em containers, precisamos analisar a arquitetura é compatível.  
+
+Imagem = Como se fosse o bloco necessário. 
+
+
+
+
