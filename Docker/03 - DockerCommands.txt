@@ -1,0 +1,27 @@
+FLUXO 
+GOLD IMAGE > DOCKER RUN >  CONTAINER ON  
+
+Docker search				[busca as imagens]
+Docker pull  				[baixa as imagens]
+Docker push  				[envia imagens para os registry]
+
+docker --version			[mostra a versão do docker]
+Docker run --help			[mostra o help do Docker run]
+Docker run hello-world			[executa um contaneir]
+
+
+Docker images				[mostra todas as imagens adicionadas]
+Docker image --help			[mostra o help do Docker image]
+Docker image history hello-world 
+Docker image remove hello-world		[remove a imagem]
+
+Docker container ps			[mostra todos os containers em execução]
+Docker container ps -a			[mostra todos os containers]
+Docker container rm container_ID	[podemos remover container parados]
+
+docker run ubuntu ls /etc		[podemos iniciar um container apenas para executar um comando]
+Docker run -it ubuntu			[cria o container e acessa ela no modo interativo]
+Docker start container_ID 		[volta a executar um container parado]
+Docker exec -it container_ID		[executa um comando para acessar o modo interativo]
+Docker stop container_ID		[para um container (não exclui)]
+Docker stop -t 0 container_ID		[para não demorar a execucao]
